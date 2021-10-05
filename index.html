@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Etsy Pricing Tool</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Pearl Lin">
+        <meta charset="utf-8">
+        <link href="style.css" rel="stylesheet">
+        <script async src="pricing.js"></script>
+    </head>
+    <body>
+        <div class="banner">
+            <h1 class="title">Etsy Pricing Tool</h1>
+        </div>
+            <h4 class="author">By: Pearl Lin</h4>
+        <!--basic introduction-->
+        <div class="introduction">
+            <p>
+                Wondering how much you should be pricing your handmade Etsy items? Don't worry, many of us are in the same boat! 
+                This pricing tool will help you get started. It mathmatically calculates your ideal price range, based on your values for each one 
+                of the fields below. All fields are required.
+            </p>
+        </div>
+        <hr id="introhr">
+        <div class="inputs">
+            <form>
+                <div class="row">
+                    <div class="dollarsprofit left">
+                        <label for="dollarsprofit"><h2>Dollars Profit</h2></label>
+                        <label for="dollarsprofit"><p>How much profit (in dollars) would be earned from your product?</p></label>
+                        <input type="number" required name="dollarsprofit" id="dollarsProfit">
+                    </div>
+                    <div class="shippingcharge right">
+                        <label for="shippingcharge"><h2>Shipping Charge</h2></label>
+                        <label for="shippingcharge"><p>How much are you planning to charge for shipping?</p></label>
+                        <input type="number" required name="shippingcharge" id="shippingCharge">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="shippingcost left">
+                        <label for="shippingcost"><h2>Shipping Cost</h2></label>
+                        <label for="shippingcost"><p>How much does it cost you to ship your item?</p></label>
+                        <input type="number" required name="shippingcost" id="shippingCost">
+                    </div>
+                    <div class="offsiteads right">
+                        <label for="offsiteads"><h2>Offsite Ads</h2></label>
+                        <label for="offsiteads"><p>Do you want to factor in an Offsite Ads fee into your price?</p></label>
+                        <select required name="offsiteads" id="offsiteAds">
+                            <option value="0.00">No</option>
+                            <option value="0.12">Yes, factor in the 12% fee</option>
+                            <option value="0.15">Yes, factor in the 15% fee</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="etsyads left">
+                        <label for="etsyads"><h2>Etsy Ads</h2></label>
+                        <label for="etsyads"><p>Do you want to factor in an Etsy Ads expense? Enter the expense if you do, otherwise select "No"</p></label>
+                        <input type="number" required name="etsyads" id="etsyAds" list="noOption">
+                            <datalist id="noOption">
+                                <option value="0.00">No</option>
+                            </datalist>
+                    </div>
+                    <div class="itemcost right">
+                        <label for="itemcost"><h2>Item Cost</h2></label>
+                        <label for="itemcost"><p>How much does it cost you to make your item?</p></label>
+                        <input type="number" required name="itemcost" id="itemCost">
+                    </div>
+                </div>
+                <input type="button" value="Find Prices" id="button" onclick="calculatePrice()">
+            </form>
+        </div>
+        <hr>
+        <h2>Results</h2>
+        <br>
+        <h3 id="calculatedPrice"></h3>
+    </body>
+</html>
